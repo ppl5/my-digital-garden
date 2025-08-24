@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-digital-garden/ppl-digital-garden/","tags":["gardenEntry"]}
+{"dg-home":true,"dg-publish":true,"permalink":"/my-digital-garden/ppl-digital-garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"created":"2025-08-24T01:12:34.205-07:00","updated":"2025-08-24T01:20:39.845-07:00"}
 ---
 
 
