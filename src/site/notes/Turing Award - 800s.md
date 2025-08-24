@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/turing-award-800s/","dgPassFrontmatter":true,"created":"2025-08-23T09:45:53.547-07:00","updated":"2025-08-24T01:10:21.436-07:00"}
+{"dg-publish":true,"permalink":"/turing-award-800s/","created":"2025-08-23T09:45:53.547-07:00","updated":"2025-08-24T01:31:11.636-07:00"}
 ---
 
 [[2025-08-23\|2025-08-23]]
