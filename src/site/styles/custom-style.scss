@@ -42,43 +42,70 @@ body {
           }
       }
 
-        // Force all SVG icons to proper size
-          .svg-icon {
-              width: 16px !important;
-              height: 16px !important;
-              max-width: 16px !important;
-              max-height: 16px !important;
-          }
-        
-          // Specifically target timestamp icons
-          .timestamps {
-              // Target the icon containers
-              i, svg, .svg-icon {
-                  width: 14px !important;
-                  height: 14px !important;
-                  max-width: 14px !important;
-                  max-height: 14px !important;
-                  display: inline-block !important;
-                  vertical-align: middle !important;
-              }
-        
-              // Also target Lucide's default size attribute
-              [icon-name] {
-                  width: 14px !important;
-                  height: 14px !important;
-        
-                  svg {
-                      width: 14px !important;
-                      height: 14px !important;
-                  }
-              }
-          }
-        
-          // Nuclear option - target by attribute selector globally
-          i[icon-name="calendar-clock"] svg,
-          i[icon-name="calendar-plus"] svg {
+          // Global Lucide icon size fix
+  * {
+      [icon-name="calendar-clock"],
+      [icon-name="calendar-plus"] {
+          width: 14px !important;
+          height: 14px !important;
+
+          &::before, &::after {
               width: 14px !important;
               height: 14px !important;
-              stroke-width: 2 !important;
           }
+      }
+  }
+
+  // Target every possible SVG rendering
+  svg.lucide,
+  svg.lucide-calendar-clock,
+  svg.lucide-calendar-plus,
+  .timestamps svg,
+  .timestamps .svg-icon,
+  .timestamps [data-lucide],
+  .timestamps [icon-name] svg {
+      width: 14px !important;
+      height: 14px !important;
+      min-width: unset !important;
+      min-height: unset !important;
+      max-width: 14px !important;
+      max-height: 14px !important;
+  }
+
+      // Override inline styles
+  .timestamps {
+      i, span, div {
+          &[icon-name] {
+              display: inline-flex !important;
+              width: 14px !important;
+              height: 14px !important;
+
+              > * {
+                  width: 14px !important;
+                  height: 14px !important;
+              }
+          }
+      }
+  }
+
+  // Use CSS attribute selector with higher specificity
+  body .content .timestamps [icon-name="calendar-clock"],
+  body .content .timestamps [icon-name="calendar-plus"] {
+      svg, & {
+          width: 14px !important;
+          height: 14px !important;
+          max-width: 14px !important;
+          max-height: 14px !important;
+          min-width: 14px !important;
+          min-height: 14px !important;
+      }
+  }
+
+  // If Lucide uses viewBox sizing
+  .timestamps {
+      svg[viewBox] {
+          width: 14px !important;
+          height: 14px !important;
+      }
+  }
 }
