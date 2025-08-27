@@ -10,4 +10,35 @@ body {
     //  h1 {
     //   color: black;
     //  }
+
+    // suggested by claude to fix image issue
+    // Fix for content centering and image display
+      .content {
+          max-width: 900px !important; // Increased from 700px to accommodate larger content
+          margin: 0 auto !important;
+          padding: 0 20px; // Add some padding for mobile
+      }
+    
+      // Fix for SVG and image display
+      img, svg {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto; // Center images
+      }
+    
+      // Specific fix for large diagrams
+      .content svg {
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+      }
+    
+      // Optional: For better readability on the Turing Award page
+      @media (min-width: 1200px) {
+          .content {
+              max-width: 1100px !important; // Even wider for large screens
+          }
+      }
 }
