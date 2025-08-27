@@ -42,29 +42,43 @@ body {
           }
       }
 
-      // Fix for oversized Lucide icons in timestamps
-      .timestamps {
-          i[icon-name="calendar-plus"],
-          i[icon-name="calendar-clock"] {
+        // Force all SVG icons to proper size
+          .svg-icon {
               width: 16px !important;
               height: 16px !important;
-              min-width: 16px !important;
-              min-height: 16px !important;
+              max-width: 16px !important;
+              max-height: 16px !important;
           }
-    
-          // Alternative: Target all Lucide icons in timestamps
-          svg {
-              width: 16px !important;
-              height: 16px !important;
+        
+          // Specifically target timestamp icons
+          .timestamps {
+              // Target the icon containers
+              i, svg, .svg-icon {
+                  width: 14px !important;
+                  height: 14px !important;
+                  max-width: 14px !important;
+                  max-height: 14px !important;
+                  display: inline-block !important;
+                  vertical-align: middle !important;
+              }
+        
+              // Also target Lucide's default size attribute
+              [icon-name] {
+                  width: 14px !important;
+                  height: 14px !important;
+        
+                  svg {
+                      width: 14px !important;
+                      height: 14px !important;
+                  }
+              }
           }
-      }
-    
-      // If the icons are still too large, try this more specific selector
-      .timestamps div i,
-      .timestamps div svg {
-          width: 14px !important;
-          height: 14px !important;
-          display: inline-block;
-          vertical-align: middle;
-      }
+        
+          // Nuclear option - target by attribute selector globally
+          i[icon-name="calendar-clock"] svg,
+          i[icon-name="calendar-plus"] svg {
+              width: 14px !important;
+              height: 14px !important;
+              stroke-width: 2 !important;
+          }
 }
