@@ -16,7 +16,23 @@ body {
       .content {
           max-width: 900px !important; // Increased from 700px to accommodate larger content
           margin: 0 auto !important;
+          margin-top: 110px !important; // Increased to prevent navbar overlap
           padding: 0 20px; // Add some padding for mobile
+          
+          @media (max-width: 800px) {
+              margin-top: 95px !important; // Adjust for mobile
+          }
+      }
+      
+      // Fix navbar layout to prevent overlap
+      .navbar {
+          height: auto !important;
+          min-height: 60px;
+          
+          .navbar-inner {
+              flex-shrink: 0;
+              max-width: 200px; // Limit the width of ppl garden text
+          }
       }
     
       // Fix for SVG and image display
